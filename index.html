@@ -5,18 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jubili Run 2025</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
   <div class="container">
-    <h1>Jubili Run 2025</h1>
+    <div class="header">
+      <h1>Jubili Run 2025</h1>
+    </div>
 
     <!-- Login/Register Form -->
     <div id="login-section">
       <h2>Log Masuk / Daftar</h2>
       <form id="login-form">
-        <label for="login-id">Login ID:</label>
+        <label for="login-id"><i class="fas fa-user"></i> Login ID:</label>
         <input type="text" id="login-id" required>
-        <label for="password">Kata Laluan:</label>
+        <label for="password"><i class="fas fa-lock"></i> Kata Laluan:</label>
         <input type="password" id="password" required>
         <button type="submit">Log Masuk</button>
         <button type="button" id="register-btn">Daftar</button>
@@ -24,21 +27,21 @@
 
       <form id="register-form" style="display: none;">
         <h2>Daftar Pengguna Baru</h2>
-        <label for="full-name">Nama Penuh:</label>
+        <label for="full-name"><i class="fas fa-user"></i> Nama Penuh:</label>
         <input type="text" id="full-name" required>
-        <label for="ic-number">No. Kad Pengenalan:</label>
+        <label for="ic-number"><i class="fas fa-id-card"></i> No. Kad Pengenalan:</label>
         <input type="text" id="ic-number" required>
-        <label for="gender">Jantina:</label>
+        <label for="gender"><i class="fas fa-venus-mars"></i> Jantina:</label>
         <input type="text" id="gender" readonly>
-        <label for="address">Alamat:</label>
+        <label for="address"><i class="fas fa-home"></i> Alamat:</label>
         <textarea id="address" required></textarea>
-        <label for="phone">No. Telefon (Malaysia):</label>
+        <label for="phone"><i class="fas fa-phone"></i> No. Telefon (Malaysia):</label>
         <input type="tel" id="phone" pattern="\+60[0-9]{9,10}" placeholder="+60123456789" required>
-        <label for="email">Email:</label>
+        <label for="email"><i class="fas fa-envelope"></i> Email:</label>
         <input type="email" id="email" required>
-        <label for="new-login-id">Login ID:</label>
+        <label for="new-login-id"><i class="fas fa-user-tag"></i> Login ID:</label>
         <input type="text" id="new-login-id" required>
-        <label for="new-password">Kata Laluan:</label>
+        <label for="new-password"><i class="fas fa-key"></i> Kata Laluan:</label>
         <input type="password" id="new-password" required>
         <button type="submit">Daftar</button>
       </form>
@@ -91,11 +94,16 @@
         <p>Total Bayaran: RM <span id="total-payment">0</span></p>
         <label>Muat Naik Bukti Pembayaran:</label>
         <input type="file" id="payment-proof" accept=".pdf,.png,.jpeg" required>
-        <p><strong>Penafian:</strong> Penganjur tidak bertanggungjawab terhadap sebarang kecederaan atau kehilangan semasa acara.</p>
+        <div class="disclaimer">
+          <p><strong>Penafian:</strong> Penganjur tidak bertanggungjawab terhadap sebarang kecederaan atau kehilangan semasa acara.</p>
+        </div>
         <button type="submit">Hantar</button>
       </form>
     </div>
   </div>
+
+  <!-- Logo di sudut kanan atas -->
+  <img src="logo.png" alt="Jubili Run 2025 Logo" class="top-right-logo">
 
   <script src="script.js"></script>
 </body>

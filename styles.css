@@ -1,67 +1,110 @@
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f4f4f9;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jubili Run 2025</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Jubili Run 2025</h1>
+    </div>
 
-.container {
-  max-width: 800px;
-  margin: 20px auto;
-  padding: 20px;
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
+    <!-- Login/Register Form -->
+    <div id="login-section">
+      <h2>Log Masuk / Daftar</h2>
+      <form id="login-form">
+        <label for="login-id"><i class="fas fa-user"></i> Login ID:</label>
+        <input type="text" id="login-id" required>
+        <label for="password"><i class="fas fa-lock"></i> Kata Laluan:</label>
+        <input type="password" id="password" required>
+        <button type="submit">Log Masuk</button>
+        <button type="button" id="register-btn">Daftar</button>
+      </form>
 
-h1, h2, h3 {
-  color: #333;
-}
+      <form id="register-form" style="display: none;">
+        <h2>Daftar Pengguna Baru</h2>
+        <label for="full-name"><i class="fas fa-user"></i> Nama Penuh:</label>
+        <input type="text" id="full-name" required>
+        <label for="ic-number"><i class="fas fa-id-card"></i> No. Kad Pengenalan:</label>
+        <input type="text" id="ic-number" required>
+        <label for="gender"><i class="fas fa-venus-mars"></i> Jantina:</label>
+        <input type="text" id="gender" readonly>
+        <label for="address"><i class="fas fa-home"></i> Alamat:</label>
+        <textarea id="address" required></textarea>
+        <label for="phone"><i class="fas fa-phone"></i> No. Telefon (Malaysia):</label>
+        <input type="tel" id="phone" pattern="\+60[0-9]{9,10}" placeholder="+60123456789" required>
+        <label for="email"><i class="fas fa-envelope"></i> Email:</label>
+        <input type="email" id="email" required>
+        <label for="new-login-id"><i class="fas fa-user-tag"></i> Login ID:</label>
+        <input type="text" id="new-login-id" required>
+        <label for="new-password"><i class="fas fa-key"></i> Kata Laluan:</label>
+        <input type="password" id="new-password" required>
+        <button type="submit">Daftar</button>
+      </form>
+    </div>
 
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
+    <!-- Registration Form -->
+    <div id="registration-section" style="display: none;">
+      <h2>Borang Pendaftaran Acara Larian</h2>
+      <form id="registration-form">
+        <div id="participants">
+          <div class="participant">
+            <h3>Peserta 1</h3>
+            <label>Nama Penuh:</label>
+            <input type="text" class="full-name" required>
+            <label>No. Kad Pengenalan:</label>
+            <input type="text" class="ic-number" required>
+            <label>Kategori:</label>
+            <select class="category" disabled>
+              <option value="lelaki-terbuka">Lelaki Terbuka (18 tahun ke atas)</option>
+              <option value="perempuan-terbuka">Perempuan Terbuka (18 tahun ke atas)</option>
+              <option value="sekolah-menengah-lelaki">Sekolah Menengah Lelaki (13-17 tahun)</option>
+              <option value="sekolah-menengah-perempuan">Sekolah Menengah Perempuan (13-17 tahun)</option>
+              <option value="sekolah-rendah">Sekolah Rendah (12 tahun ke bawah)</option>
+            </select>
+            <label>Jantina:</label>
+            <input type="text" class="gender" readonly>
+            <label>Saiz Baju:</label>
+            <select class="shirt-size" required>
+              <option value="JS">JS</option>
+              <option value="JM">JM</option>
+              <option value="JL">JL</option>
+              <option value="2XS">2XS</option>
+              <option value="XS">XS</option>
+              <option value="S">S</option>
+              <option value="M">M</option>
+              <option value="L">L</option>
+              <option value="XL">XL</option>
+              <option value="2XL">2XL</option>
+              <option value="3XL">3XL</option>
+              <option value="4XL">4XL</option>
+            </select>
+            <label>Jenis Baju:</label>
+            <select class="shirt-type" required>
+              <option value="roundneck-pendek">Roundneck Lengan Pendek</option>
+              <option value="roundneck-panjang">Roundneck Lengan Panjang</option>
+            </select>
+          </div>
+        </div>
+        <button type="button" id="add-participant">Tambah Peserta</button>
+        <p>Total Bayaran: RM <span id="total-payment">0</span></p>
+        <label>Muat Naik Bukti Pembayaran:</label>
+        <input type="file" id="payment-proof" accept=".pdf,.png,.jpeg" required>
+        <div class="disclaimer">
+          <p><strong>Penafian:</strong> Penganjur tidak bertanggungjawab terhadap sebarang kecederaan atau kehilangan semasa acara.</p>
+        </div>
+        <button type="submit">Hantar</button>
+      </form>
+    </div>
+  </div>
 
-label {
-  font-weight: bold;
-}
+  <!-- Logo di sudut kanan atas -->
+  <img src="logo.png" alt="Jubili Run 2025 Logo" class="top-right-logo">
 
-input, select, textarea, button {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-button {
-  background-color: #007bff;
-  color: white;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #0056b3;
-}
-
-#participants {
-  margin-bottom: 20px;
-}
-
-.participant {
-  border: 1px solid #ddd;
-  padding: 10px;
-  margin-bottom: 10px;
-  border-radius: 4px;
-}
-
-@media (max-width: 600px) {
-  .container {
-    padding: 10px;
-  }
-
-  input, select, textarea, button {
-    font-size: 14px;
-    padding: 8px;
-  }
-}
+  <script src="script.js"></script>
+</body>
+</html>
