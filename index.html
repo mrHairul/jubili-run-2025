@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jubili Run 2025</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Jubili Run 2025</h1>
+
+    <!-- Login/Register Form -->
+    <div id="login-section">
+      <h2>Log Masuk / Daftar</h2>
+      <form id="login-form">
+        <label for="login-id">Login ID:</label>
+        <input type="text" id="login-id" required>
+        <label for="password">Kata Laluan:</label>
+        <input type="password" id="password" required>
+        <button type="submit">Log Masuk</button>
+        <button type="button" id="register-btn">Daftar</button>
+      </form>
+
+      <form id="register-form" style="display: none;">
+        <h2>Daftar Pengguna Baru</h2>
+        <label for="full-name">Nama Penuh:</label>
+        <input type="text" id="full-name" required>
+        <label for="ic-number">No. Kad Pengenalan:</label>
+        <input type="text" id="ic-number" required>
+        <label for="gender">Jantina:</label>
+        <input type="text" id="gender" readonly>
+        <label for="address">Alamat:</label>
+        <textarea id="address" required></textarea>
+        <label for="phone">No. Telefon (Malaysia):</label>
+        <input type="tel" id="phone" pattern="\+60[0-9]{9,10}" placeholder="+60123456789" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" required>
+        <label for="new-login-id">Login ID:</label>
+        <input type="text" id="new-login-id" required>
+        <label for="new-password">Kata Laluan:</label>
+        <input type="password" id="new-password" required>
+        <button type="submit">Daftar</button>
+      </form>
+    </div>
+
+    <!-- Registration Form -->
+    <div id="registration-section" style="display: none;">
+      <h2>Borang Pendaftaran Acara Larian</h2>
+      <form id="registration-form">
+        <div id="participants">
+          <div class="participant">
+            <h3>Peserta 1</h3>
+            <label>Nama Penuh:</label>
+            <input type="text" class="full-name" required>
+            <label>No. Kad Pengenalan:</label>
+            <input type="text" class="ic-number" required>
+            <label>Kategori:</label>
+            <select class="category" disabled>
+              <option value="lelaki-terbuka">Lelaki Terbuka (18 tahun ke atas)</option>
+              <option value="perempuan-terbuka">Perempuan Terbuka (18 tahun ke atas)</option>
+              <option value="sekolah-menengah-lelaki">Sekolah Menengah Lelaki (13-17 tahun)</option>
+              <option value="sekolah-menengah-perempuan">Sekolah Menengah Perempuan (13-17 tahun)</option>
+              <option value="sekolah-rendah">Sekolah Rendah (12 tahun ke bawah)</option>
+            </select>
+            <label>Jantina:</label>
+            <input type="text" class="gender" readonly>
+            <label>Saiz Baju:</label>
+            <select class="shirt-size" required>
+              <option value="JS">JS</option>
+              <option value="JM">JM</option>
+              <option value="JL">JL</option>
+              <option value="2XS">2XS</option>
+              <option value="XS">XS</option>
+              <option value="S">S</option>
+              <option value="M">M</option>
+              <option value="L">L</option>
+              <option value="XL">XL</option>
+              <option value="2XL">2XL</option>
+              <option value="3XL">3XL</option>
+              <option value="4XL">4XL</option>
+            </select>
+            <label>Jenis Baju:</label>
+            <select class="shirt-type" required>
+              <option value="roundneck-pendek">Roundneck Lengan Pendek</option>
+              <option value="roundneck-panjang">Roundneck Lengan Panjang</option>
+            </select>
+          </div>
+        </div>
+        <button type="button" id="add-participant">Tambah Peserta</button>
+        <p>Total Bayaran: RM <span id="total-payment">0</span></p>
+        <label>Muat Naik Bukti Pembayaran:</label>
+        <input type="file" id="payment-proof" accept=".pdf,.png,.jpeg" required>
+        <p><strong>Penafian:</strong> Penganjur tidak bertanggungjawab terhadap sebarang kecederaan atau kehilangan semasa acara.</p>
+        <button type="submit">Hantar</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
